@@ -8,6 +8,9 @@
 import Foundation
 import CloudKit
 
+import Foundation
+import CloudKit
+
 class ChallengeViewModel : ObservableObject {
     @Published var Challenges : [ChallengeModel] = []
     
@@ -38,7 +41,7 @@ class ChallengeViewModel : ObservableObject {
                 }
             }
         }
-        //change
+        
         CKContainer(identifier: "iCloud.R.BlazeLens").publicCloudDatabase.add(operation)
     }
     
@@ -100,8 +103,4 @@ class ChallengeViewModel : ObservableObject {
     
     
 }
-    
-    
-   
-
-        
+ 

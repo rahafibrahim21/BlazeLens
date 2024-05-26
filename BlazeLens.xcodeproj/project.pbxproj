@@ -38,6 +38,8 @@
 		EED3A2752BFFB7E700B632DF /* AddingPointsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED3A2742BFFB7E700B632DF /* AddingPointsView.swift */; };
 		EED3A2772BFFB81E00B632DF /* uploadPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED3A2762BFFB81E00B632DF /* uploadPhoto.swift */; };
 		EED3A2792BFFB90400B632DF /* ChallengepopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED3A2782BFFB90400B632DF /* ChallengepopView.swift */; };
+		EED3A27B2C01014C00B632DF /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED3A27A2C01014C00B632DF /* NotificationView.swift */; };
+		EED3A27D2C01020500B632DF /* UserNotifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED3A27C2C01020500B632DF /* UserNotifications.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,11 +70,14 @@
 		EE898D332BFDDCB00036729B /* Onboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding.swift; sourceTree = "<group>"; };
 		EE898D362BFDDCD60036729B /* Logo4.GIF */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Logo4.GIF; sourceTree = "<group>"; };
 		EE898D372BFDDCD60036729B /* Logo3.GIF */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Logo3.GIF; sourceTree = "<group>"; };
+		EEB725832C02810E009B9BA0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		EED3A2702BFFB77B00B632DF /* CloudKitHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitHelper.swift; sourceTree = "<group>"; };
 		EED3A2722BFFB79500B632DF /* NewPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPage.swift; sourceTree = "<group>"; };
 		EED3A2742BFFB7E700B632DF /* AddingPointsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddingPointsView.swift; sourceTree = "<group>"; };
 		EED3A2762BFFB81E00B632DF /* uploadPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = uploadPhoto.swift; sourceTree = "<group>"; };
 		EED3A2782BFFB90400B632DF /* ChallengepopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengepopView.swift; sourceTree = "<group>"; };
+		EED3A27A2C01014C00B632DF /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
+		EED3A27C2C01020500B632DF /* UserNotifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNotifications.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +111,7 @@
 		EE898CFA2BFDD6980036729B /* BlazeLens */ = {
 			isa = PBXGroup;
 			children = (
+				EEB725832C02810E009B9BA0 /* Info.plist */,
 				EED3A26F2BFFB76200B632DF /* Helper */,
 				EE898D352BFDDCC80036729B /* GIF */,
 				EE898D142BFDDA650036729B /* ModelView */,
@@ -149,6 +155,8 @@
 				EE898D332BFDDCB00036729B /* Onboarding.swift */,
 				EED3A2722BFFB79500B632DF /* NewPage.swift */,
 				EED3A2782BFFB90400B632DF /* ChallengepopView.swift */,
+				EED3A27A2C01014C00B632DF /* NotificationView.swift */,
+				EED3A27C2C01020500B632DF /* UserNotifications.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -275,6 +283,7 @@
 				EE898D182BFDDA9C0036729B /* postViewModel.swift in Sources */,
 				EE898D1C2BFDDB560036729B /* exploreCard.swift in Sources */,
 				EE898D262BFDDC030036729B /* votePop.swift in Sources */,
+				EED3A27B2C01014C00B632DF /* NotificationView.swift in Sources */,
 				EED3A2792BFFB90400B632DF /* ChallengepopView.swift in Sources */,
 				EE898D242BFDDBE60036729B /* votePage.swift in Sources */,
 				EE898D1A2BFDDAF20036729B /* ExploreView.swift in Sources */,
@@ -285,6 +294,7 @@
 				EE898D132BFDDA410036729B /* postModel.swift in Sources */,
 				EE898CFC2BFDD6980036729B /* BlazeLensApp.swift in Sources */,
 				EE898D162BFDDA880036729B /* ChallengeViewModel.swift in Sources */,
+				EED3A27D2C01020500B632DF /* UserNotifications.swift in Sources */,
 				EED3A2752BFFB7E700B632DF /* AddingPointsView.swift in Sources */,
 				EE898D0B2BFDD9C40036729B /* ChallengeView.swift in Sources */,
 				EE898D1E2BFDDB6F0036729B /* ExploerView2.swift in Sources */,
@@ -430,6 +440,9 @@
 				DEVELOPMENT_TEAM = J359H9BY44;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BlazeLens/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.games";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Blazelens requires access to the camera to allow users to take photos for challenges.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -439,12 +452,16 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = R.BlazeLens;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -460,6 +477,9 @@
 				DEVELOPMENT_TEAM = J359H9BY44;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BlazeLens/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.games";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Blazelens requires access to the camera to allow users to take photos for challenges.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -469,12 +489,16 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = R.BlazeLens;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

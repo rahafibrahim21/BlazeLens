@@ -10,9 +10,12 @@ import SwiftUI
 @main
 struct BlazeLensApp: App {
     @StateObject var VM = ChallengeViewModel()
+    init() {
+          NotificationManager.shared.requestAuthorization()
+      }
     var body: some Scene {
         WindowGroup {
-            ExploreView().environmentObject(VM)
+            SplashView().environmentObject(VM)
         }
     }
 }

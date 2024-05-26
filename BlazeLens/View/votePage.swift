@@ -106,7 +106,7 @@ struct votePage: View {
             }
         
         .onAppear {
-            viewModel.fetchposts()
+           viewModel.fetchposts()
             
         }
         .toolbar {
@@ -125,7 +125,14 @@ struct votePage: View {
    
     
         
-   
+    func formatTime(_ date: Date) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "HH:mm:ss"
+        dateFormatter.timeZone = TimeZone(identifier: "Asia/Riyadh")
+        
+        return dateFormatter.string(from: date)
+    }
+    
 }
 
 //#Preview {

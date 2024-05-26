@@ -9,6 +9,10 @@ import SwiftUI
 import CloudKit
 import GameKit
 
+import SwiftUI
+import CloudKit
+import GameKit
+
 struct ChallengeView: View {
     
     @EnvironmentObject var ChallengeVM : ChallengeViewModel
@@ -17,6 +21,7 @@ struct ChallengeView: View {
     let challenge: ChallengeModel
     
     @State private var showImagePicker = false
+    @State var imageSelected = false
     @State private var selectedImage: UIImage?
     let container = CKContainer(identifier: "iCloud.R.BlazeLens")
     @State private var fetchedPlayerID: String?
@@ -36,6 +41,24 @@ struct ChallengeView: View {
         ZStack {
             Color(.backgroungC)
                 .ignoresSafeArea()
+                .toolbar {
+                    ToolbarItem(placement: .principal) {
+                        Text("Today Challenge")
+                            .bold()
+                    }
+                 
+                    ToolbarItem(placement: .navigationBarLeading) {
+                        NavigationLink {
+                            ExploreView()
+                        } label: {
+                            Image( "arrow_back")
+                                .resizable()
+                                .padding(.leading, 5.0)
+                                .frame(width: 30, height: 20)
+                                .foregroundColor(Color(red: 0.05, green: 0.23, blue: 0.61))
+                        }
+                    }
+                }.navigationBarBackButtonHidden()
             VStack {
                 
                 Text ("\(challenge.challengeName) ").bold().font(.system(size: 25))
@@ -47,25 +70,16 @@ struct ChallengeView: View {
                 
                 
                 
-                
                 Button(action: {
-                    
-                    if GKLocalPlayer.local.isAuthenticated {
-                        self.showImagePicker = true
-                        fetchedPlayerName = GKLocalPlayer.local.displayName
-                        fetchedPlayerID = GKLocalPlayer.local.playerID
-                        savePost()
-                        
-                    } else {
-                        // Present Game Center login view
-                        authenticateWithGameCenter()
-                    }
-
-                    
-                    
-                    
-                    
-                }) {
+                                   if GKLocalPlayer.local.isAuthenticated {
+                                       self.showImagePicker = true
+                                       fetchedPlayerName = GKLocalPlayer.local.displayName
+                                       fetchedPlayerID = GKLocalPlayer.local.playerID
+                                       savePost()
+                                   } else {
+                                       authenticateWithGameCenter()
+                                   }
+                               }) {
                     
                     
                     
@@ -121,10 +135,18 @@ struct ChallengeView: View {
                   }
                 .padding(.horizontal ,70)
               
-                        
-                    }.sheet(isPresented: $showImagePicker, onDismiss: savePost) {
-                        ImagePicker(selectedImage: self.$selectedImage, sourceType: .photoLibrary)
-            }
+                NavigationLink(destination: ChallengepopView(challenge: challenge ), isActive: $imageSelected) {
+                                       EmptyView()
+                                   }
+                               }
+            .sheet(isPresented: $showImagePicker, onDismiss: {
+                           if selectedImage != nil {
+                               imageSelected = true
+                               savePost()
+                           }
+                       }) {
+                           ImagePicker(selectedImage: $selectedImage, sourceType: .camera)
+                       }
             //  }
         }.onAppear {
             fetchPlayerID()
@@ -334,8 +356,8 @@ struct ChallengeView: View {
         
     }
 
-//
-//
+    
+    
 //    #Preview {
 //        NavigationStack{
 //            ChallengeView(challenge: <#ChallengeModel#>).environmentObject(ChallengeViewModel())
